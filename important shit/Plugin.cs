@@ -13,7 +13,7 @@ namespace GunMania
     [BepInDependency(Alexandria.Alexandria.GUID)] // this mod depends on the Alexandria API: https://enter-the-gungeon.thunderstore.io/package/Alexandria/Alexandria/
     [BepInDependency(ETGModMainBehaviour.GUID)]
     [BepInPlugin(GUID, NAME, VERSION)]
-    public class Module : BaseUnityPlugin
+    public class Plugin : BaseUnityPlugin
     {
         public const string GUID = "gustavin.etg.gunmania";
         public const string NAME = "GunMania";
