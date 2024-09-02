@@ -43,7 +43,7 @@
     <Compile Include="Guns\DessertEagle.cs" />
     <Compile Include="important shit\MiscToolMethods.cs" />
     <Compile Include="Guns\Dick.cs" />
-    <Compile Include="important shit\aaaa.cs" />
+    <Compile Include="important shit\MultiActiveReload.cs" />
     <Compile Include="important shit\Tools.cs" />
     <Compile Include="important shit\Plugin.cs" />
     <Compile Include="important shit\VFXHelper.cs" />
