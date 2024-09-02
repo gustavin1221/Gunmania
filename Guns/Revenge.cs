@@ -63,7 +63,7 @@ namespace HelloPretzel
             );
             for (int i = 0; i < 4; i++)
             {
-                gun.AddProjectileModuleFrom(PickupObjectDatabase.GetById(601) as Gun, true, false);
+                gun.AddProjectileModuleFrom(PickupObjectDatabase.GetById(175) as Gun, true, false);
             }
             foreach (ProjectileModule projectileModule in gun.Volley.projectiles)
             {
@@ -81,7 +81,7 @@ namespace HelloPretzel
                 projectile.baseData.range = 20;
                 projectile.baseData.speed = 18;
                 projectile.AdditionalScaleMultiplier = 0.5f;
-                projectile.SetProjectileSpriteRight("bs_projectile_001", 12, 12, false, tk2dBaseSprite.Anchor.MiddleCenter, 16, 16);
+                projectile.SetProjectileSpriteRight("rvg_projectile_001", 12, 12, false, tk2dBaseSprite.Anchor.MiddleCenter, 16, 16);
                 FakePrefab.MarkAsFakePrefab(projectile.gameObject);
                 UnityEngine.Object.DontDestroyOnLoad(projectile);
                 gun.DefaultModule.ammoType = GameUIAmmoType.AmmoType.SHOTGUN;
