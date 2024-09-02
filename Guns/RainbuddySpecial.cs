@@ -8,7 +8,7 @@ using Alexandria.ItemAPI;
 namespace GunMania
 {
 
-    class BowlersShotgun : GunBehaviour
+    class RainbuddySpecial : GunBehaviour
     {
 
 
@@ -16,13 +16,13 @@ namespace GunMania
         {
             // Get yourself a new gun "base" first.
             // Let's just call it "Basic Gun", and use "jpxfrd" for all sprites and as "codename" All sprites must begin with the same word as the codename. For example, your firing sprite would be named "jpxfrd_fire_001".
-            Gun gun = ETGMod.Databases.Items.NewGun("Bowler's Shotgun", "bwlr");
+            Gun gun = ETGMod.Databases.Items.NewGun("Rainbuddy Special", "bwlr");
             // "kp:basic_gun determines how you spawn in your gun through the console. You can change this command to whatever you want, as long as it follows the "name:itemname" template.
-            Game.Items.Rename("outdated_gun_mods:bowler's_shotgun", "gunmania:bowlersshotgun");
-            gun.gameObject.AddComponent<BowlersShotgun>();
+            Game.Items.Rename("outdated_gun_mods:rainbuddy_special", "gunmania:rainbuddy_special");
+            gun.gameObject.AddComponent<RainbuddySpecial>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
-            gun.SetShortDescription("Pat");
-            gun.SetLongDescription("Bowler's trusty old shotgun! Perhaps the reason he doesn't use it anymore is becuase it wasn't from a rainbow chest?");
+            gun.SetShortDescription("-The Rain Train");
+            gun.SetLongDescription("Bowler's trusty ol' shotgun. Or should i say Pat?");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.
@@ -31,8 +31,8 @@ namespace GunMania
             gun.SetupSprite(null, "bwlr_idle_001", 8);
             // ETGMod automatically checks which animations are available.
             // The numbers next to "shootAnimation" determine the animation fps. You can also tweak the animation fps of the reload animation and idle animation using this method.
-            gun.SetAnimationFPS(gun.shootAnimation, 16);
-            gun.SetAnimationFPS(gun.reloadAnimation, 7); // Every modded gun has base projectile it works with that is borrowed from other guns in the game.                                   // The gun names are the names from the JSON dump! While most are the same, some guns named completely different things. If you need help finding gun names, ask a modder on the Gungeon discord.
+            gun.SetAnimationFPS(gun.shootAnimation, 18);
+            gun.SetAnimationFPS(gun.reloadAnimation, 6); // Every modded gun has base projectile it works with that is borrowed from other guns in the game.                                   // The gun names are the names from the JSON dump! While most are the same, some guns named completely different things. If you need help finding gun names, ask a modder on the Gungeon discord.
             gun.muzzleFlashEffects = (PickupObjectDatabase.GetById(601) as Gun).muzzleFlashEffects;
             for (int i = 0; i < 4; i++)
             {
