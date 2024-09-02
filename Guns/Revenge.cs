@@ -80,7 +80,7 @@ namespace HelloPretzel
                 projectile.baseData.damage = 8f;
                 projectile.baseData.range = 20;
                 projectile.baseData.speed = 18;
-                projectile.AdditionalScaleMultiplier = 1f;
+                projectile.AdditionalScaleMultiplier = 0.5f;
                 projectile.SetProjectileSpriteRight("bs_projectile_001", 12, 12, false, tk2dBaseSprite.Anchor.MiddleCenter, 16, 16);
                 FakePrefab.MarkAsFakePrefab(projectile.gameObject);
                 UnityEngine.Object.DontDestroyOnLoad(projectile);
