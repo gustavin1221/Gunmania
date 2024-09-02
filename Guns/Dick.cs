@@ -62,7 +62,7 @@ namespace GunMania
             Projectile projectile = UnityEngine.Object.Instantiate<Projectile>((PickupObjectDatabase.GetById(86) as Gun).DefaultModule.projectiles[0]);
 
             BasicBeamController beamComp = projectile.GenerateBeamPrefab(
-                "HelloPretzel/Resources/cum",
+                "GunMania/Resources/cum",
                 new Vector2(10, 8),
                 new Vector2(0, 1),
                 BeamAnimPaths,
