@@ -34,7 +34,7 @@ namespace GunMania
 
             //Adds the item to the gungeon item list, the ammonomicon, the loot table, etc.
             //Do this after ItemBuilder.AddSpriteToObject!
-            ItemBuilder.SetupItem(item, shortDesc, longDesc, "gustavin");
+            ItemBuilder.SetupItem(item, shortDesc, longDesc, "gunmania");
 
             //Adds the actual passive effect to the item    
             ItemBuilder.AddPassiveStatModifier(item, PlayerStats.StatType.DodgeRollSpeedMultiplier, 0.23f, StatModifier.ModifyMethod.ADDITIVE);
@@ -46,11 +46,11 @@ item.quality = PickupObject.ItemQuality.C;
 
             List<string> mandatoryConsoleIDs = new List<string>
 {
-"gustavin:frog_ring",
+"gunmania:frog_ring",
 };
             List<string> optionalConsoleIDs = new List<string>
 {
-    "gustavin:frog_ring"
+    "gunmania:frog_ring"
 };
             CustomSynergies.Add("Green Bouncy Fishes!", mandatoryConsoleIDs, optionalConsoleIDs, true);
         }
