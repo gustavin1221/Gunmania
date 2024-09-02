@@ -31,10 +31,10 @@ namespace GunMania
             gun.SetupSprite(null, "bwlr_idle_001", 8);
             // ETGMod automatically checks which animations are available.
             // The numbers next to "shootAnimation" determine the animation fps. You can also tweak the animation fps of the reload animation and idle animation using this method.
-            gun.SetAnimationFPS(gun.shootAnimation, 8);
-            gun.SetAnimationFPS(gun.reloadAnimation, 5); // Every modded gun has base projectile it works with that is borrowed from other guns in the game.                                   // The gun names are the names from the JSON dump! While most are the same, some guns named completely different things. If you need help finding gun names, ask a modder on the Gungeon discord.
+            gun.SetAnimationFPS(gun.shootAnimation, 16);
+            gun.SetAnimationFPS(gun.reloadAnimation, 7); // Every modded gun has base projectile it works with that is borrowed from other guns in the game.                                   // The gun names are the names from the JSON dump! While most are the same, some guns named completely different things. If you need help finding gun names, ask a modder on the Gungeon discord.
             gun.muzzleFlashEffects = (PickupObjectDatabase.GetById(601) as Gun).muzzleFlashEffects;
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
                 gun.AddProjectileModuleFrom(PickupObjectDatabase.GetById(157) as Gun, true, false);
             }
@@ -43,18 +43,18 @@ namespace GunMania
                 projectileModule.ammoCost = 1;
                 projectileModule.shootStyle = ProjectileModule.ShootStyle.Automatic;
                 projectileModule.sequenceStyle = ProjectileModule.ProjectileSequenceStyle.Random;
-                projectileModule.cooldownTime = 0.65f;
-                projectileModule.angleVariance = 11f;
+                projectileModule.cooldownTime = 0.7f;
+                projectileModule.angleVariance = 12f;
                 gun.barrelOffset.transform.localPosition = new Vector3(1.375f, 0.25f, 0f);
                 projectileModule.numberOfShotsInClip = 4;
                 Projectile projectile = UnityEngine.Object.Instantiate<Projectile>(projectileModule.projectiles[0]);
                 projectile.gameObject.SetActive(false);
                 projectileModule.projectiles[0] = projectile;
-                projectile.baseData.damage = 9f;
+                projectile.baseData.damage = 8f;
                 projectile.baseData.range = 20;
-                projectile.baseData.speed = 14;
+                projectile.baseData.speed = 15;
                 projectile.AdditionalScaleMultiplier = .5f;
-                projectile.SetProjectileSpriteRight("bwlr_projectile_001", 10, 10, false, tk2dBaseSprite.Anchor.MiddleCenter, 16, 16);
+                projectile.SetProjectileSpriteRight("bwlr_projectile_001", 9, 9, false, tk2dBaseSprite.Anchor.MiddleCenter, 16, 16);
                 FakePrefab.MarkAsFakePrefab(projectile.gameObject);
                 UnityEngine.Object.DontDestroyOnLoad(projectile);
                 gun.DefaultModule.ammoType = GameUIAmmoType.AmmoType.SHOTGUN;
@@ -66,12 +66,13 @@ namespace GunMania
                 }
 
             }
-            gun.reloadTime = 1.75f;
+            gun.reloadTime = 1.7f;
             gun.SetBaseMaxAmmo(125);
-            gun.carryPixelOffset = new IntVector2(7, 0);
+            gun.carryPixelOffset = new IntVector2(4, -1);
 
             
             ETGMod.Databases.Items.Add(gun, null, "ANY");
+
 
         }
 

@@ -32,7 +32,7 @@ namespace GunMania
             gun.SetupSprite(null, "rvg_idle_001", 8);
             // ETGMod automatically checks which animations are available.
             // The numbers next to "shootAnimation" determine the animation fps. You can also tweak the animation fps of the reload animation and idle animation using this method.
-            gun.SetAnimationFPS(gun.shootAnimation, 20);
+            gun.SetAnimationFPS(gun.shootAnimation, 22);
             gun.SetAnimationFPS(gun.reloadAnimation, 14); // Every modded gun has base projectile it works with that is borrowed from other guns in the game.     
             // The gun names are the names from the JSON dump! While most are the same, some guns named completely different things. If you need help finding gun names, ask a modder on the Gungeon discord.
             gun.muzzleFlashEffects = VFXToolbox.CreateVFXPool("Revenge Muzzle Flash",
