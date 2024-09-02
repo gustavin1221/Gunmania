@@ -260,6 +260,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Packages.config\icon.ico" />
+    <EmbeddedResource Include="Resources\AmmoTypes\rvg_clipempty.png" />
+    <EmbeddedResource Include="Resources\AmmoTypes\rvg_clipfull.png" />
     <EmbeddedResource Include="Resources\MuzzleFlashes\RevengeMuzzleFlash006.png" />
     <EmbeddedResource Include="Resources\MuzzleFlashes\RevengeMuzzleFlash007.png" />
     <EmbeddedResource Include="Resources\MuzzleFlashes\RevengeMuzzleFlash008.png" />
