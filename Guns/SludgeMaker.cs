@@ -6,7 +6,7 @@ using UnityEngine;
 using Alexandria.ItemAPI;
 using System.Collections.Generic;
 
-namespace Mod
+namespace GunMania
 {
 
     class SludgeMaker : GunBehaviour
@@ -19,7 +19,7 @@ namespace Mod
             // Let's just call it "Basic Gun", and use "jpxfrd" for all sprites and as "codename" All sprites must begin with the same word as the codename. For example, your firing sprite would be named "jpxfrd_fire_001".
             Gun gun = ETGMod.Databases.Items.NewGun("Sludge Maker", "slime");
             // "kp:basic_gun determines how you spawn in your gun through the console. You can change this command to whatever you want, as long as it follows the "name:itemname" template.
-            Game.Items.Rename("outdated_gun_mods:sludge_maker", "gustavin:sludge_maker");
+            Game.Items.Rename("outdated_gun_mods:sludge_maker", "gunmania:sludge_maker");
             gun.gameObject.AddComponent<SludgeMaker>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Sticky.");

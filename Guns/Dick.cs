@@ -9,7 +9,7 @@ using MonoMod;
 using UnityEngine;
 using Alexandria.ItemAPI;
 
-namespace HelloPretzel
+namespace GunMania
 {
     public class Dick : AdvancedGunBehaviour
     {
@@ -17,7 +17,7 @@ namespace HelloPretzel
         {
 
             Gun gun = ETGMod.Databases.Items.NewGun("MY HUGE PENIS", "dick");
-            Game.Items.Rename("outdated_gun_mods:my_huge_penis", "gustavin:dick");
+            Game.Items.Rename("outdated_gun_mods:my_huge_penis", "gunmaniaeasteregg:dick");
             var behav = gun.gameObject.AddComponent<Dick>();
             
             behav.preventNormalFireAudio = true;
@@ -52,7 +52,7 @@ namespace HelloPretzel
 
             List<string> BeamAnimPaths = new List<string>()
             {
-                "HelloPretzel/Resources/cum",
+                "GunMania/Resources/cum",
                 
 
             };

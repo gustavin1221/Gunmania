@@ -6,7 +6,7 @@ using UnityEngine;
 using Alexandria.ItemAPI;
 using System.Collections.Generic;
 
-namespace HelloPretzel
+namespace GunMania
 {
 
     class Frostbite : GunBehaviour
@@ -19,7 +19,7 @@ namespace HelloPretzel
             // Let's just call it "Basic Gun", and use "jpxfrd" for all sprites and as "codename" All sprites must begin with the same word as the codename. For example, your firing sprite would be named "jpxfrd_fire_001".
             Gun gun = ETGMod.Databases.Items.NewGun("Frostbite", "snwb");
             // "kp:basic_gun determines how you spawn in your gun through the console. You can change this command to whatever you want, as long as it follows the "name:itemname" template.
-            Game.Items.Rename("outdated_gun_mods:frostbite", "gustavin:frostbite");
+            Game.Items.Rename("outdated_gun_mods:frostbite", "gunmania:frostbite");
             gun.gameObject.AddComponent<Frostbite>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Bites.");
@@ -38,13 +38,13 @@ namespace HelloPretzel
             // The gun names are the names from the JSON dump! While most are the same, some guns named completely different things. If you need help finding gun names, ask a modder on the Gungeon discord.
             gun.AddProjectileModuleFrom(PickupObjectDatabase.GetById(387) as Gun, true, false);
             gun.DefaultModule.ammoType = GameUIAmmoType.AmmoType.CUSTOM;
-            gun.DefaultModule.customAmmoType = CustomClipAmmoTypeToolbox.AddCustomAmmoType("FrostBite", "HelloPretzel/Resources/AmmoTypes/snwb_clipfull", "HelloPretzel/Resources/AmmoTypes/snwb_clipempty");
+            gun.DefaultModule.customAmmoType = CustomClipAmmoTypeToolbox.AddCustomAmmoType("FrostBite", "GunMania/Resources/AmmoTypes/snwb_clipfull", "GunMania/Resources/AmmoTypes/snwb_clipempty");
             gun.muzzleFlashEffects = VFXToolbox.CreateVFXPool("Frost Muzzle Flash",
 new List<string>()
 {
-                    "HelloPretzel/Resources/MuzzleFlashes/FrostMuzzleFlash001",
-                                        "HelloPretzel/Resources/MuzzleFlashes/FrostMuzzleFlash002",
-                                                            "HelloPretzel/Resources/MuzzleFlashes/FrostMuzzleFlash003",
+                    "GunMania/Resources/MuzzleFlashes/FrostMuzzleFlash001",
+                                        "GunMania/Resources/MuzzleFlashes/FrostMuzzleFlash002",
+                                                            "GunMania/Resources/MuzzleFlashes/FrostMuzzleFlash003",
 
 },
 15, //FPS

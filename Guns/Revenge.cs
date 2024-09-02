@@ -6,7 +6,7 @@ using UnityEngine;
 using Alexandria.ItemAPI;
 using System.Collections.Generic;
 
-namespace HelloPretzel
+namespace GunMania
 {
 
     class Revenge : GunBehaviour
@@ -19,7 +19,7 @@ namespace HelloPretzel
             // Let's just call it "Basic Gun", and use "jpxfrd" for all sprites and as "codename" All sprites must begin with the same word as the codename. For example, your firing sprite would be named "jpxfrd_fire_001".
             Gun gun = ETGMod.Databases.Items.NewGun("Revenge", "rvg");
             // "kp:basic_gun determines how you spawn in your gun through the console. You can change this command to whatever you want, as long as it follows the "name:itemname" template.
-            Game.Items.Rename("outdated_gun_mods:revenge", "gustavin:revenge");
+            Game.Items.Rename("outdated_gun_mods:revenge", "gunmania:revenge");
             gun.gameObject.AddComponent<Revenge>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Thief!");
@@ -38,14 +38,14 @@ namespace HelloPretzel
             gun.muzzleFlashEffects = VFXToolbox.CreateVFXPool("Revenge Muzzle Flash",
                new List<string>()
             {
-                    "HelloPretzel/Resources/MuzzleFlashes/RevengeMuzzleFlash001",
-                    "HelloPretzel/Resources/MuzzleFlashes/RevengeMuzzleFlash002",
-                    "HelloPretzel/Resources/MuzzleFlashes/RevengeMuzzleFlash003",
-                    "HelloPretzel/Resources/MuzzleFlashes/RevengeMuzzleFlash004",
-                    "HelloPretzel/Resources/MuzzleFlashes/RevengeMuzzleFlash005",
-                    "HelloPretzel/Resources/MuzzleFlashes/RevengeMuzzleFlash006",
-                    "HelloPretzel/Resources/MuzzleFlashes/RevengeMuzzleFlash007",
-                    "HelloPretzel/Resources/MuzzleFlashes/RevengeMuzzleFlash008",
+                    "GunMania/Resources/MuzzleFlashes/RevengeMuzzleFlash001",
+                    "GunMania/Resources/MuzzleFlashes/RevengeMuzzleFlash002",
+                    "GunMania/Resources/MuzzleFlashes/RevengeMuzzleFlash003",
+                    "GunMania/Resources/MuzzleFlashes/RevengeMuzzleFlash004",
+                    "GunMania/Resources/MuzzleFlashes/RevengeMuzzleFlash005",
+                    "GunMania/Resources/MuzzleFlashes/RevengeMuzzleFlash006",
+                    "GunMania/Resources/MuzzleFlashes/RevengeMuzzleFlash007",
+                    "GunMania/Resources/MuzzleFlashes/RevengeMuzzleFlash008",
 
             },
                     16, //FPS

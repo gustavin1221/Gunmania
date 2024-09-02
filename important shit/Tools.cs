@@ -3,7 +3,7 @@ using UnityEngine;
 using System.Collections.Generic;
 
 
-namespace HelloPretzel
+namespace GunMania
 {
 
     public static class Tools

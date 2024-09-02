@@ -2,7 +2,7 @@
 using System.Reflection;
 using UnityEngine;
 
-namespace HelloPretzel
+namespace GunMania
 {
     using UnityEngine;
     using System.Collections;

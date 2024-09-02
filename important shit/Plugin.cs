@@ -7,9 +7,8 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using HarmonyLib;
-using Mod;
 
-namespace HelloPretzel
+namespace GunMania
 {
     [BepInDependency(Alexandria.Alexandria.GUID)] // this mod depends on the Alexandria API: https://enter-the-gungeon.thunderstore.io/package/Alexandria/Alexandria/
     [BepInDependency(ETGModMainBehaviour.GUID)]

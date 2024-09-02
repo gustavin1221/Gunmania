@@ -4,10 +4,9 @@ using System.Linq;
 using System.Reflection;
 using System.Text;
 using UnityEngine;
-using Knives;
 using System.Collections;
 
-namespace HelloPretzel
+namespace GunMania
 {
     /// <summary>
     /// Advanced version of a GunBehaviour. Still has all methods of a GunBehaviour, but also has some new ones.

@@ -8,7 +8,7 @@ using UnityEngine;
 using Alexandria.ItemAPI;
 using Dungeonator;
 
-namespace Knives
+namespace GunMania
 {
 
 

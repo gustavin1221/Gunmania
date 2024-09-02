@@ -7,8 +7,8 @@
     <ProjectGuid>{D6D7A494-722E-4763-959B-C2D6B6A42B01}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>HelloPretzel</RootNamespace>
-    <AssemblyName>Gustavin%27s Guns And Items</AssemblyName>
+    <RootNamespace>GunMania</RootNamespace>
+    <AssemblyName>GunMania</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>

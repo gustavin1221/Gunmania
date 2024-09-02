@@ -6,7 +6,7 @@ using UnityEngine;
 using Alexandria.ItemAPI;
 using System.Collections.Generic;
 
-namespace HelloPretzel
+namespace GunMania
 {
 
     class KittyCannon : GunBehaviour
@@ -19,7 +19,7 @@ namespace HelloPretzel
             // Let's just call it "Basic Gun", and use "jpxfrd" for all sprites and as "codename" All sprites must begin with the same word as the codename. For example, your firing sprite would be named "jpxfrd_fire_001".
             Gun gun = ETGMod.Databases.Items.NewGun("Kitty Cannon", "cat");
             // "kp:basic_gun determines how you spawn in your gun through the console. You can change this command to whatever you want, as long as it follows the "name:itemname" template.
-            Game.Items.Rename("outdated_gun_mods:kitty_cannon", "gustavin:kitty_cannon");
+            Game.Items.Rename("outdated_gun_mods:kitty_cannon", "gunmania:kitty_cannon");
             gun.gameObject.AddComponent<KittyCannon>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Meow");
@@ -80,7 +80,7 @@ namespace HelloPretzel
 
             };
             gun.DefaultModule.ammoType = GameUIAmmoType.AmmoType.CUSTOM;
-            gun.DefaultModule.customAmmoType = CustomClipAmmoTypeToolbox.AddCustomAmmoType("Cat", "HelloPretzel/Resources/AmmoTypes/cat_clipfull", "HelloPretzel/Resources/AmmoTypes/cat_clipempty");
+            gun.DefaultModule.customAmmoType = CustomClipAmmoTypeToolbox.AddCustomAmmoType("Cat", "GunMania/Resources/AmmoTypes/cat_clipfull", "GunMania/Resources/AmmoTypes/cat_clipempty");
             gun.gunSwitchGroup = null;
             ETGMod.Databases.Items.Add(gun, null, "ANY");
 

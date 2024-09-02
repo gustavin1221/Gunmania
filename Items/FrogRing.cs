@@ -5,7 +5,7 @@ using System.Text;
 using UnityEngine;
 using Alexandria.ItemAPI;
 
-namespace HelloPretzel
+namespace GunMania
 {
     public class FrogRing : PassiveItem
     {
@@ -16,7 +16,7 @@ namespace HelloPretzel
             string itemName = "Frog Ring";
 
             //Refers to an embedded png in the project. Make sure to embed your resources! Google it
-            string resourceName = "HelloPretzel/Resources/Items/frog_ring";
+            string resourceName = "GunMania/Resources/Items/frog_ring";
 
             //Create new GameObject
             GameObject obj = new GameObject(itemName);
@@ -46,11 +46,11 @@ item.quality = PickupObject.ItemQuality.C;
 
             List<string> mandatoryConsoleIDs = new List<string>
 {
-"gustavin:frog_ammulet",
+"gustavin:frog_ring",
 };
             List<string> optionalConsoleIDs = new List<string>
 {
-    "gustavin:frog_ammulet"
+    "gustavin:frog_ring"
 };
             CustomSynergies.Add("Green Bouncy Fishes!", mandatoryConsoleIDs, optionalConsoleIDs, true);
         }

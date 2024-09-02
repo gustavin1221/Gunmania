@@ -5,7 +5,7 @@ using MonoMod;
 using UnityEngine;
 using Alexandria.ItemAPI;
 
-namespace Manuel
+namespace GunMania
 {
 
     class Piper : GunBehaviour

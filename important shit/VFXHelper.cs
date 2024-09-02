@@ -7,7 +7,7 @@ using System.Text;
 using UnityEngine;
 
 
-namespace HelloPretzel
+namespace GunMania
 {
   
     class VFXToolbox

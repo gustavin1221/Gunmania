@@ -6,7 +6,7 @@ using UnityEngine;
 using Alexandria.ItemAPI;
 using System.Collections.Generic;
 
-namespace HelloPretzel
+namespace GunMania
 {
 
     class BlunderBus : GunBehaviour
@@ -19,7 +19,7 @@ namespace HelloPretzel
             // Let's just call it "Basic Gun", and use "jpxfrd" for all sprites and as "codename" All sprites must begin with the same word as the codename. For example, your firing sprite would be named "jpxfrd_fire_001".
             Gun gun = ETGMod.Databases.Items.NewGun("Blunder Bus", "bus");
             // "kp:basic_gun determines how you spawn in your gun through the console. You can change this command to whatever you want, as long as it follows the "name:itemname" template.
-            Game.Items.Rename("outdated_gun_mods:blunder_bus", "gustavin:blunder_bus");
+            Game.Items.Rename("outdated_gun_mods:blunder_bus", "gunmania:blunder_bus");
             gun.gameObject.AddComponent<BlunderBus>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Miss Fritter");
@@ -74,7 +74,7 @@ namespace HelloPretzel
             };
             gun.DefaultModule.chargeProjectiles = new List<ProjectileModule.ChargeProjectile> { item };
             gun.DefaultModule.ammoType = GameUIAmmoType.AmmoType.CUSTOM;
-            gun.DefaultModule.customAmmoType = CustomClipAmmoTypeToolbox.AddCustomAmmoType("Bus", "HelloPretzel/Resources/AmmoTypes/bus_clipfull", "HelloPretzel/Resources/AmmoTypes/bus_clipempty");
+            gun.DefaultModule.customAmmoType = CustomClipAmmoTypeToolbox.AddCustomAmmoType("Bus", "GunMania/Resources/AmmoTypes/bus_clipfull", "GunMania/Resources/AmmoTypes/bus_clipempty");
             gun.gunSwitchGroup = null;
             ETGMod.Databases.Items.Add(gun, null, "ANY");
             ExplosionData Boom = new ExplosionData()
