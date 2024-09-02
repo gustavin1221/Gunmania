@@ -58,12 +58,12 @@ item.quality = PickupObject.ItemQuality.C;
         public override void Pickup(PlayerController player)
         {
             base.Pickup(player);
-            Plugin.Log($"Player picked up {DisplayName}");
+            Module.Log($"Player picked up {DisplayName}");
         }
 
         public override void DisableEffect(PlayerController player)
         {
-            Plugin.Log($"Player dropped or got rid of {DisplayName}");
+            Module.Log($"Player dropped or got rid of {DisplayName}");
         }
     }
 }
