@@ -34,7 +34,6 @@ namespace HelloPretzel
             // The numbers next to "shootAnimation" determine the animation fps. You can also tweak the animation fps of the reload animation and idle animation using this method.
             gun.SetAnimationFPS(gun.shootAnimation, 20);
             gun.SetAnimationFPS(gun.reloadAnimation, 14); // Every modded gun has base projectile it works with that is borrowed from other guns in the game.     
-            gun.muzzleFlashEffects = (PickupObjectDatabase.GetById(387) as Gun).muzzleFlashEffects;
             // The gun names are the names from the JSON dump! While most are the same, some guns named completely different things. If you need help finding gun names, ask a modder on the Gungeon discord.
             gun.muzzleFlashEffects = VFXToolbox.CreateVFXPool("Revenge Muzzle Flash",
                new List<string>()
@@ -127,7 +126,7 @@ namespace HelloPretzel
             }
 
             gun.reloadTime = 1;
-            gun.SetBaseMaxAmmo(175);
+            gun.SetBaseMaxAmmo(75);
             gun.carryPixelOffset = new IntVector2(8, -2);
             ETGMod.Databases.Items.Add(gun, null, "ANY");
 
