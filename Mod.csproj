@@ -37,6 +37,7 @@
   <ItemGroup>
     <Compile Include="Guns\KittyCannon.cs" />
     <Compile Include="Guns\Piper.cs" />
+    <Compile Include="Guns\BowlersShotgun.cs" />
     <Compile Include="important shit\AdvancedGunBehavior.cs" />
     <Compile Include="Guns\BlunderBus.cs" />
     <Compile Include="Guns\SludgeMaker.cs" />
