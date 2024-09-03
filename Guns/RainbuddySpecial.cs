@@ -69,9 +69,9 @@ namespace GunMania
             }
             gun.reloadTime = 1.7f;
             gun.SetBaseMaxAmmo(125);
-            gun.carryPixelOffset = new IntVector2(4, -1);
+            gun.carryPixelOffset = new IntVector2(4, 0);
 
-            
+
             ETGMod.Databases.Items.Add(gun, null, "ANY");
             gun.PreventNormalFireAudio = true;
             gun.gunSwitchGroup = (PickupObjectDatabase.GetById(157) as Gun).gunSwitchGroup;
@@ -80,6 +80,10 @@ namespace GunMania
         public override void PostProcessProjectile(Projectile projectile)
         {
             base.PostProcessProjectile(projectile);
+            {
+                projectile.sprite.usesOverrideMaterial = true;
+                projectile.sprite.renderer.material.shader = ShaderCache.Acquire("Brave/Internal/RainbowChestShader");
+            }
             projectile.OnHitEnemy += this.OnHitEnemy;
         }
 
@@ -92,7 +96,13 @@ namespace GunMania
             {
                 s.usesOverrideMaterial = true;
                 s.renderer.material.shader = ShaderCache.Acquire("Brave/Internal/RainbowChestShader");
+
             }
+        }
+        private void Start()
+        {
+            gun.sprite.usesOverrideMaterial = true;
+            gun.sprite.renderer.material.shader = ShaderCache.Acquire("Brave/Internal/RainbowChestShader");
         }
         //Now add the Tools class to your project.
         //All that's left now is sprite stuff. 
@@ -103,4 +113,4 @@ namespace GunMania
         //If you need a basic two handed .json. Just use the jpxfrd2.json.
         //And finally, don't forget to add your Gun to your ETGModule class!
     }
-}
+    }

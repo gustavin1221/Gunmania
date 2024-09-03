@@ -38,7 +38,7 @@ namespace GunMania
             RainbuddySpecial.Add();
             Gal.Add();
             FrogRing.Add();
-
+            FlubberRing.Add();
             Log($"{NAME} v{VERSION} started succesfully", ("#f7f7ea"));
         }
 

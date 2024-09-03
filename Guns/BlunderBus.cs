@@ -5,6 +5,7 @@ using MonoMod;
 using UnityEngine;
 using Alexandria.ItemAPI;
 using System.Collections.Generic;
+using static UnityEngine.GridBrushBase;
 
 namespace GunMania
 {
@@ -77,32 +78,29 @@ namespace GunMania
             gun.DefaultModule.customAmmoType = CustomClipAmmoTypeToolbox.AddCustomAmmoType("Bus", "GunMania/Resources/AmmoTypes/bus_clipfull", "GunMania/Resources/AmmoTypes/bus_clipempty");
             gun.gunSwitchGroup = null;
             gun.gunClass = GunClass.CHARGE;
+
+            VFXPool pool = new VFXPool();
+            pool.type = VFXPoolType.RandomGroups;
+            VFXComplex splat1 = MiscToolMethods.CreateVFXComplex("Blood",
+                new List<string>()
+                {
+                    "GunMania/Resources/blood",
+                },
+                18, //FPS
+                new IntVector2(27, 16), //Dimensions
+                tk2dBaseSprite.Anchor.MiddleCenter, //Anchor
+                false, //Uses a Z height off the ground
+                0, //The Z height, if used
+                true,
+               VFXAlignment.VelocityAligned
+               );
+
+
             ETGMod.Databases.Items.Add(gun, null, "ANY");
-            ExplosionData Boom = new ExplosionData()
-            {
-                effect = (PickupObjectDatabase.GetById(108) as SpawnObjectPlayerItem).objectToSpawn.GetComponent<ProximityMine>().explosionData.effect,
+           
 
-
-                damageRadius = 3.5f,
-                damageToPlayer = 0f,
-                doDamage = true,
-                damage = 5,
-                doDestroyProjectiles = true,
-                doForce = true,
-                debrisForce = 20f,
-                preventPlayerForce = true,
-                explosionDelay = 0.1f,
-                usesComprehensiveDelay = false,
-                doScreenShake = true,
-                playDefaultSFX = false,
-                force = 20,
-                breakSecretWalls = false,
-
-            };
-            ExplosiveModifier boom = projectile.gameObject.GetOrAddComponent<ExplosiveModifier>();
-            boom.explosionData = Boom;
-            boom.doExplosion = true;
-
+            projectile.hitEffects.tileMapVertical = pool;
+            projectile.hitEffects.deathTileMapVertical = pool;
         }
         public override void PostProcessProjectile(Projectile projectile)
         {

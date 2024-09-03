@@ -37,7 +37,6 @@
   <ItemGroup>
     <Compile Include="Guns\GreenAlienBeamGun.cs" />
     <Compile Include="Guns\KittyCannon.cs" />
-    <Compile Include="Guns\Piper.cs" />
     <Compile Include="Guns\RainbuddySpecial.cs" />
     <Compile Include="important shit\AdvancedGunBehavior.cs" />
     <Compile Include="Guns\BlunderBus.cs" />
@@ -49,6 +48,7 @@
     <Compile Include="important shit\Tools.cs" />
     <Compile Include="important shit\Plugin.cs" />
     <Compile Include="important shit\VFXHelper.cs" />
+    <Compile Include="Items\FlubberBulletsRing.cs" />
     <Compile Include="Items\FrogRing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Guns\Slingshot.cs" />
@@ -262,6 +262,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Packages.config\icon.ico" />
+    <EmbeddedResource Include="Resources\blood.png" />
+    <EmbeddedResource Include="Resources\Items\flubber_ring.png" />
     <EmbeddedResource Include="Resources\MuzzleFlashes\GreenBeamMuzzleFlash.png" />
     <EmbeddedResource Include="Resources\Beams\gal_beam_002.png" />
     <EmbeddedResource Include="Resources\Beams\gal_beam_001.png" />
