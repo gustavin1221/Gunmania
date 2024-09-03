@@ -129,47 +129,14 @@ namespace GunMania
             gun.reloadTime = 1;
             gun.SetBaseMaxAmmo(75);
             gun.carryPixelOffset = new IntVector2(8, -2);
+            gun.gunClass = GunClass.SHOTGUN;
             ETGMod.Databases.Items.Add(gun, null, "ANY");
 
-
-        }
-
-        public override void OnPostFired(PlayerController player, Gun gun)
-        {
-            //This determines what sound you want to play when you fire a gun.
-            //Sounds names are based on the Gungeon sound dump, which can be found at EnterTheGungeon/Etg_Data/StreamingAssets/Audio/GeneratedSoundBanks/Windows/sfx.txt
             gun.PreventNormalFireAudio = true;
-            AkSoundEngine.PostEvent("Play_WPN_shotgun_shot_01", gameObject);
-        }
-        
-        private bool HasReloaded;
-        //This block of code allows us to change the reload sounds.
-        public override void Update()
-        {
-            if (gun.CurrentOwner)
-            {
+            gun.gunSwitchGroup = (PickupObjectDatabase.GetById(601) as Gun).gunSwitchGroup;
 
-                if (!gun.PreventNormalFireAudio)
-                {
-                    this.gun.PreventNormalFireAudio = true;
-                }
-                if (!gun.IsReloading && !HasReloaded)
-                {
-                    this.HasReloaded = true;
-                }
-            }
         }
 
-        public override void OnReloadPressed(PlayerController player, Gun gun, bool bSOMETHING)
-        {
-            if (gun.IsReloading && this.HasReloaded)
-            {
-                HasReloaded = false;
-                AkSoundEngine.PostEvent("Stop_WPN_All", base.gameObject);
-                base.OnReloadPressed(player, gun, bSOMETHING);
-                AkSoundEngine.PostEvent("m_WPN_frostgiant_reload_02", base.gameObject);
-            }
-        }
         //Now add the Tools class to your project.
         //All that's left now is sprite stuff. 
         //Your sprites should be organized, like how you see in the mod folder. 

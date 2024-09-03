@@ -36,6 +36,7 @@ namespace GunMania
             BlunderBus.Add();
             Revenge.Add();
             RainbuddySpecial.Add();
+            Gal.Add();
             FrogRing.Add();
 
             Log($"{NAME} v{VERSION} started succesfully", ("#f7f7ea"));

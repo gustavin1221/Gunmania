@@ -57,6 +57,7 @@ namespace GunMania
             FakePrefab.MarkAsFakePrefab(projectile.gameObject);
             UnityEngine.Object.DontDestroyOnLoad(projectile);
             gun.DefaultModule.projectiles[0] = projectile;
+            gun.gunClass = GunClass.SILLY;
             //projectile.baseData allows you to modify the base properties of your projectile module.
             //In our case, our gun uses modified projectiles from the ak-47.
             //You can modify a good number of stats but for now, let's just modify the damage and speed.

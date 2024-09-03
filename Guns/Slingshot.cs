@@ -52,6 +52,7 @@ namespace GunMania
             gun.GetComponent<tk2dSpriteAnimator>().GetClipByName(gun.chargeAnimation).loopStart = 5;
             // Here we just set the quality of the gun and the "EncounterGuid", which is used by Gungeon to identify the gun.
             gun.quality = PickupObject.ItemQuality.A;
+            gun.gunClass = GunClass.CHARGE;
             //This block of code helps clone our projectile. Basically it makes it so things like Shadow Clone and Hip Holster keep the stats/sprite of your custom gun's projectiles.
             Projectile projectile = UnityEngine.Object.Instantiate<Projectile>((PickupObjectDatabase.GetById(15) as Gun).DefaultModule.projectiles[0]);
             projectile.gameObject.SetActive(false);

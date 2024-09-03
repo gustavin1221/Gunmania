@@ -44,7 +44,7 @@ namespace GunMania
             gun.DefaultModule.cooldownTime = 0.01f;
             gun.DefaultModule.numberOfShotsInClip = 10;
             gun.DefaultModule.ammoType = GameUIAmmoType.AmmoType.CUSTOM;
-            
+            gun.gunClass = GunClass.SILLY;
             gun.DefaultModule.customAmmoType = "white";
             gun.barrelOffset.transform.localPosition = new Vector3(1.6875f, 0.5625f, 0f);
             gun.SetBaseMaxAmmo(200);
@@ -52,7 +52,7 @@ namespace GunMania
 
             List<string> BeamAnimPaths = new List<string>()
             {
-                "GunMania/Resources/cum",
+                "GunMania/Resources/Beams/cum",
                 
 
             };
@@ -62,7 +62,7 @@ namespace GunMania
             Projectile projectile = UnityEngine.Object.Instantiate<Projectile>((PickupObjectDatabase.GetById(86) as Gun).DefaultModule.projectiles[0]);
 
             BasicBeamController beamComp = projectile.GenerateBeamPrefab(
-                "GunMania/Resources/cum",
+                "GunMania/Resources/Beams/cum",
                 new Vector2(10, 8),
                 new Vector2(0, 1),
                 BeamAnimPaths,

@@ -76,6 +76,7 @@ namespace GunMania
             gun.DefaultModule.ammoType = GameUIAmmoType.AmmoType.CUSTOM;
             gun.DefaultModule.customAmmoType = CustomClipAmmoTypeToolbox.AddCustomAmmoType("Bus", "GunMania/Resources/AmmoTypes/bus_clipfull", "GunMania/Resources/AmmoTypes/bus_clipempty");
             gun.gunSwitchGroup = null;
+            gun.gunClass = GunClass.CHARGE;
             ETGMod.Databases.Items.Add(gun, null, "ANY");
             ExplosionData Boom = new ExplosionData()
             {

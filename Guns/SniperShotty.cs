@@ -35,6 +35,7 @@ namespace GunMania
             gun.SetAnimationFPS(gun.shootAnimation, 20);
             gun.SetAnimationFPS(gun.reloadAnimation, 15); // Every modded gun has base projectile it works with that is borrowed from other guns in the game.                                   // The gun names are the names from the JSON dump! While most are the same, some guns named completely different things. If you need help finding gun names, ask a modder on the Gungeon discord.
             gun.muzzleFlashEffects = (PickupObjectDatabase.GetById(387) as Gun).muzzleFlashEffects;
+            gun.gunClass = GunClass.SILLY;
             for (int i = 0; i < 3; i++)
             {
                 gun.AddProjectileModuleFrom(PickupObjectDatabase.GetById(157) as Gun, true, false);

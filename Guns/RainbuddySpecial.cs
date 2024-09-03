@@ -22,7 +22,7 @@ namespace GunMania
             gun.gameObject.AddComponent<RainbuddySpecial>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("-The Rain Train");
-            gun.SetLongDescription("Bowler's trusty ol' shotgun. Or should i say Pat?");
+            gun.SetLongDescription("Bowler's trusty ol' shotgun. It can only kill those who are rainbow.");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.
@@ -31,7 +31,7 @@ namespace GunMania
             gun.SetupSprite(null, "bwlr_idle_001", 8);
             // ETGMod automatically checks which animations are available.
             // The numbers next to "shootAnimation" determine the animation fps. You can also tweak the animation fps of the reload animation and idle animation using this method.
-            gun.SetAnimationFPS(gun.shootAnimation, 18);
+            gun.SetAnimationFPS(gun.shootAnimation, 20);
             gun.SetAnimationFPS(gun.reloadAnimation, 6); // Every modded gun has base projectile it works with that is borrowed from other guns in the game.                                   // The gun names are the names from the JSON dump! While most are the same, some guns named completely different things. If you need help finding gun names, ask a modder on the Gungeon discord.
             gun.muzzleFlashEffects = (PickupObjectDatabase.GetById(601) as Gun).muzzleFlashEffects;
             for (int i = 0; i < 4; i++)
@@ -46,11 +46,11 @@ namespace GunMania
                 projectileModule.cooldownTime = 0.7f;
                 projectileModule.angleVariance = 12f;
                 gun.barrelOffset.transform.localPosition = new Vector3(1.375f, 0.25f, 0f);
-                projectileModule.numberOfShotsInClip = 4;
+                projectileModule.numberOfShotsInClip = 7;
                 Projectile projectile = UnityEngine.Object.Instantiate<Projectile>(projectileModule.projectiles[0]);
                 projectile.gameObject.SetActive(false);
                 projectileModule.projectiles[0] = projectile;
-                projectile.baseData.damage = 8f;
+                projectile.baseData.damage = 7f;
                 projectile.baseData.range = 20;
                 projectile.baseData.speed = 15;
                 projectile.AdditionalScaleMultiplier = .5f;
@@ -59,6 +59,7 @@ namespace GunMania
                 UnityEngine.Object.DontDestroyOnLoad(projectile);
                 gun.DefaultModule.ammoType = GameUIAmmoType.AmmoType.SHOTGUN;
                 gun.DefaultModule.projectiles[0] = projectile;
+                gun.gunClass = GunClass.SHOTGUN;
                 bool flag = projectileModule != gun.DefaultModule;
                 if (flag)
                 {
@@ -72,44 +73,25 @@ namespace GunMania
 
             
             ETGMod.Databases.Items.Add(gun, null, "ANY");
-
-
-        }
-
-        public override void OnPostFired(PlayerController player, Gun gun)
-        {
-            //This determines what sound you want to play when you fire a gun.
-            //Sounds names are based on the Gungeon sound dump, which can be found at EnterTheGungeon/Etg_Data/StreamingAssets/Audio/GeneratedSoundBanks/Windows/sfx.txt
             gun.PreventNormalFireAudio = true;
-            AkSoundEngine.PostEvent("Play_WPN_shotgun_shot_01", gameObject);
-        }
-        
-        private bool HasReloaded;
-        //This block of code allows us to change the reload sounds.
-        public override void Update()
-        {
-            if (gun.CurrentOwner)
-            {
-
-                if (!gun.PreventNormalFireAudio)
-                {
-                    this.gun.PreventNormalFireAudio = true;
-                }
-                if (!gun.IsReloading && !HasReloaded)
-                {
-                    this.HasReloaded = true;
-                }
-            }
+            gun.gunSwitchGroup = (PickupObjectDatabase.GetById(157) as Gun).gunSwitchGroup;
         }
 
-        public override void OnReloadPressed(PlayerController player, Gun gun, bool bSOMETHING)
+        public override void PostProcessProjectile(Projectile projectile)
         {
-            if (gun.IsReloading && this.HasReloaded)
+            base.PostProcessProjectile(projectile);
+            projectile.OnHitEnemy += this.OnHitEnemy;
+        }
+
+        private void OnHitEnemy(Projectile p, SpeculativeRigidbody enemy, bool killed)
+        {
+            if (enemy == null || enemy.healthHaver == null || enemy.healthHaver.bodySprites == null)
+                return;
+
+            foreach (var s in enemy.healthHaver.bodySprites)
             {
-                HasReloaded = false;
-                AkSoundEngine.PostEvent("Stop_WPN_All", base.gameObject);
-                base.OnReloadPressed(player, gun, bSOMETHING);
-                AkSoundEngine.PostEvent("Play_WPN_SAA_reload_01", base.gameObject);
+                s.usesOverrideMaterial = true;
+                s.renderer.material.shader = ShaderCache.Acquire("Brave/Internal/RainbowChestShader");
             }
         }
         //Now add the Tools class to your project.
@@ -117,7 +99,7 @@ namespace GunMania
         //Your sprites should be organized, like how you see in the mod folder. 
         //Every gun requires that you have a .json to match the sprites or else the gun won't spawn at all
         //.Json determines the hand sprites for your character. You can make a gun two handed by having both "SecondaryHand" and "PrimaryHand" in the .json file, which can be edited through Notepad or Visual Studios
-        //By default this gun is a one-handed weapon
+        //By default this gun is a one-handed weapona
         //If you need a basic two handed .json. Just use the jpxfrd2.json.
         //And finally, don't forget to add your Gun to your ETGModule class!
     }

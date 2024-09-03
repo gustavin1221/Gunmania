@@ -107,6 +107,7 @@ namespace GunMania
             gun.DefaultModule.ammoType = GameUIAmmoType.AmmoType.CUSTOM;
             gun.DefaultModule.customAmmoType = CustomClipAmmoTypeToolbox.AddCustomAmmoType("Cake", "GunMania/Resources/AmmoTypes/dssrt_clipfull", "GunMania/Resources/AmmoTypes/dssrt_clipempty");
             gun.gunSwitchGroup = null;
+            gun.gunClass = GunClass.PISTOL;
             ETGMod.Databases.Items.Add(gun, null, "ANY");
 
         }

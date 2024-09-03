@@ -103,6 +103,7 @@ VFXAlignment.Fixed
                                                 projectileManualOffsets, projectileOverrideColliderSizes, projectileOverrideColliderOffsets, projectileOverrideProjectilesToCopyFrom, ProjectileWrapMode);
 
             ETGMod.Databases.Items.Add(gun, null, "ANY");
+            gun.gunClass = GunClass.ICE;
 
         }
 
