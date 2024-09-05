@@ -22,7 +22,8 @@ namespace GunMania
             
             behav.preventNormalFireAudio = true;
             gun.SetShortDescription("idk");
-            gun.SetLongDescription("idk");
+            gun.SetLongDescription("idk\n\n\n" +
+                "-Gunmania-");
 
             gun.SetupSprite(null, "gal_idle_001", 4);
 

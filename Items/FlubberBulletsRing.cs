@@ -30,18 +30,20 @@ namespace GunMania
 
             //Ammonomicon entry variables
             string shortDesc = "?";
-            string longDesc = "Makes your shots bouncy and poisonous!";
+            string longDesc = "Two shot Erias made these rings out of the bodies of her poisoned enemies.\n\n" +
+                "Makes your shots bouncy and poisonous!\n\n\n" +
+                "-Gunmania-";
 
             //Adds the item to the gungeon item list, the ammonomicon, the loot table, etc.
             //Do this after ItemBuilder.AddSpriteToObject!
             ItemBuilder.SetupItem(item, shortDesc, longDesc, "gunmania");
 
             //Set the rarity of the item
-            item.quality = PickupObject.ItemQuality.B;
+            item.quality = PickupObject.ItemQuality.A;
         }
         public void PostProcessProjectile(Projectile projectile, float effectChanceScalar)
         {
-            if (UnityEngine.Random.value <= 1f)
+            if (UnityEngine.Random.value <= 0.7f)
                 projectile.statusEffectsToApply.Add((PickupObjectDatabase.GetById(204) as BulletStatusEffectItem).HealthModifierEffect);
 
             BounceProjModifier bounce = projectile.gameObject.GetOrAddComponent<BounceProjModifier>();

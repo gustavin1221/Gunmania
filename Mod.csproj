@@ -48,6 +48,9 @@
     <Compile Include="important shit\Tools.cs" />
     <Compile Include="important shit\Plugin.cs" />
     <Compile Include="important shit\VFXHelper.cs" />
+    <Compile Include="Items\CaseyRing.cs" />
+    <Compile Include="Items\MucousLead.cs" />
+    <Compile Include="Items\EncheesedLead.cs" />
     <Compile Include="Items\FlubberBulletsRing.cs" />
     <Compile Include="Items\FrogRing.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -262,6 +265,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Packages.config\icon.ico" />
+    <EmbeddedResource Include="Resources\Items\mucous_lead.png" />
+    <EmbeddedResource Include="Resources\Items\skeletal_bullets.png" />
+    <EmbeddedResource Include="Resources\Items\cheesy_bullets.png" />
+    <EmbeddedResource Include="Resources\Items\casey_ring.png" />
     <EmbeddedResource Include="Resources\blood.png" />
     <EmbeddedResource Include="Resources\Items\flubber_ring.png" />
     <EmbeddedResource Include="Resources\MuzzleFlashes\GreenBeamMuzzleFlash.png" />

@@ -23,7 +23,7 @@ namespace GunMania
             gun.gameObject.AddComponent<Revenge>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Thief!");
-            gun.SetLongDescription("This gun was forged by an ancient stonesmith, i wonder where he is now. Maybe Bello knows something about it.");
+            gun.SetLongDescription("This gun was forged by an ancient stonesmith, i wonder where he is now. Maybe Bello knows something about it.\n\n\n" + "-Gunmania-");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.

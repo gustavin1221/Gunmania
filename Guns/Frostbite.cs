@@ -23,7 +23,8 @@ namespace GunMania
             gun.gameObject.AddComponent<Frostbite>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Bites.");
-            gun.SetLongDescription("Applies the freezing effect when hitting an enemy.");
+            gun.SetLongDescription("Applies the freezing effect when hitting an enemy.\n\n\n" +
+                "-Gunmania-");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.

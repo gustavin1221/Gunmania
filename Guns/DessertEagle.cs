@@ -24,7 +24,8 @@ namespace GunMania
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("One slice per person");
             gun.SetLongDescription("This Desert Eagle was mistaken for baking powder by a blind gundead, it now is a part of gungeon weaponry.\n\n" +
-                "The charged shot gets a .2 damage increase on each bounce! Aim for the walls!");
+                "The charged shot gets a .2 damage increase on each bounce! Aim for the walls!\n\n\n" +
+                "-Gunmania-");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.

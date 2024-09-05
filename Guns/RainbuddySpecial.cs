@@ -22,7 +22,7 @@ namespace GunMania
             gun.gameObject.AddComponent<RainbuddySpecial>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("-The Rain Train");
-            gun.SetLongDescription("Bowler's trusty ol' shotgun. It can only kill those who are rainbow.");
+            gun.SetLongDescription("Bowler's trusty ol' shotgun. It can only kill those who are rainbow.\n\n\n" + "-Gunmania-");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.
@@ -67,8 +67,8 @@ namespace GunMania
                 }
 
             }
-            gun.reloadTime = 1.7f;
-            gun.SetBaseMaxAmmo(125);
+            gun.reloadTime = 1.65f;
+            gun.SetBaseMaxAmmo(200);
             gun.carryPixelOffset = new IntVector2(4, 0);
 
 
@@ -98,11 +98,6 @@ namespace GunMania
                 s.renderer.material.shader = ShaderCache.Acquire("Brave/Internal/RainbowChestShader");
 
             }
-        }
-        private void Start()
-        {
-            gun.sprite.usesOverrideMaterial = true;
-            gun.sprite.renderer.material.shader = ShaderCache.Acquire("Brave/Internal/RainbowChestShader");
         }
         //Now add the Tools class to your project.
         //All that's left now is sprite stuff. 

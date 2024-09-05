@@ -23,7 +23,8 @@ namespace GunMania
             gun.gameObject.AddComponent<Slingshot>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Those birds are angry!");
-            gun.SetLongDescription("Back then gungeoneers fired Gigi eggs with this thing. Turns out, using a handy subspecies of this gross bird is a way better idea.");
+            gun.SetLongDescription("Back then gungeoneers fired Gigi eggs with this thing. Turns out, using a handy subspecies of this gross bird is a way better idea.\n\n\n" +
+                "-Gunmania-");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.
@@ -159,7 +160,6 @@ namespace GunMania
             gun.DefaultModule.customAmmoType = "duck";
             gun.carryPixelOffset = new IntVector2(0, 0);
             gun.gunSwitchGroup = null;
-            ETGMod.Databases.Items.Add(gun, null, "ANY");
             ExplosionData Boom = new ExplosionData()
             {
                 effect = (PickupObjectDatabase.GetById(108) as SpawnObjectPlayerItem).objectToSpawn.GetComponent<ProximityMine>().explosionData.effect,
@@ -184,7 +184,7 @@ namespace GunMania
             ExplosiveModifier boom = projectile4.gameObject.GetOrAddComponent<ExplosiveModifier>();
             boom.explosionData = Boom;
             boom.doExplosion = true;
-
+            ETGMod.Databases.Items.Add(gun, null, "ANY");
         }
 
         public override void PostProcessProjectile(Projectile projectile)

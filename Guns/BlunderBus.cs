@@ -24,7 +24,8 @@ namespace GunMania
             gun.gameObject.AddComponent<BlunderBus>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Miss Fritter");
-            gun.SetLongDescription("Fires a bus that deals no damage but picks up enemies as it flies and when it runs out of range it explodes dropping off its passengers");
+            gun.SetLongDescription("Fires children that explode into blood on contact :skullemoji:\n\n\n" +
+                "-Gunmania-");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.
@@ -80,7 +81,7 @@ namespace GunMania
             gun.gunClass = GunClass.CHARGE;
 
             VFXPool pool = new VFXPool();
-            pool.type = VFXPoolType.RandomGroups;
+
             VFXComplex splat1 = MiscToolMethods.CreateVFXComplex("Blood",
                 new List<string>()
                 {
@@ -94,13 +95,12 @@ namespace GunMania
                 true,
                VFXAlignment.VelocityAligned
                );
-
-
-            ETGMod.Databases.Items.Add(gun, null, "ANY");
-           
-
+            pool.type = VFXPoolType.RandomGroups;
             projectile.hitEffects.tileMapVertical = pool;
             projectile.hitEffects.deathTileMapVertical = pool;
+            projectile.hitEffects.tileMapHorizontal = pool;
+            projectile.hitEffects.deathTileMapHorizontal = pool;
+            ETGMod.Databases.Items.Add(gun, null, "ANY");
         }
         public override void PostProcessProjectile(Projectile projectile)
         {

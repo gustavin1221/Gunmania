@@ -22,7 +22,8 @@ namespace GunMania
             
             behav.preventNormalFireAudio = true;
             gun.SetShortDescription("mine");
-            gun.SetLongDescription("OOOOOOOOOOH IM BOUT TO BUST");
+            gun.SetLongDescription("OOOOOOOOOOH IM BOUT TO BUST\n\n\n" +
+                "-Gunmania Easter Egg-");
 
             gun.SetupSprite(null, "dick_idle_001", 4);
 
@@ -92,14 +93,13 @@ namespace GunMania
             projectile.baseData.force *= 10f;
             projectile.baseData.range = 999f;
             projectile.baseData.speed = 25f;
-            gun.gunClass = GunClass.BEAM;
             beamComp.penetration = 100;
             beamComp.boneType = BasicBeamController.BeamBoneType.Projectile;
             beamComp.DamageModifier = 1f;
             beamComp.interpolateStretchedBones = false;
             gun.DefaultModule.projectiles[0] = projectile;
 
-            gun.quality = PickupObject.ItemQuality.B;
+            gun.quality = PickupObject.ItemQuality.EXCLUDED;
 
            
 

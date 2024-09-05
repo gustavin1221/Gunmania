@@ -23,7 +23,8 @@ namespace GunMania
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Season 1");
             gun.SetLongDescription("The best shotgun in the game!\n\n" +
-                "FAQ: Why are it's shots blue? A: Idk i just like it like this leave me alone goddamn");
+                "FAQ: Why are it's shots blue? A: Idk i just like it like this leave me alone goddamn\n\n\n" +
+                "-Gunmania-");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.

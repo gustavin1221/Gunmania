@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using HarmonyLib;
+using HutongGames.PlayMaker.Actions;
 
 namespace GunMania
 {
@@ -39,7 +40,17 @@ namespace GunMania
             Gal.Add();
             FrogRing.Add();
             FlubberRing.Add();
-            Log($"{NAME} v{VERSION} started succesfully", ("#f7f7ea"));
+            CaseyRing.Add();
+            EncheesedLead.Add();
+            MucousLead.Add();
+
+            Log($"{NAME} v{VERSION} started succesfully", ("#dd00ff"));
+
+            PickupObjectDatabase.GetById(368).quality = PickupObject.ItemQuality.B;
+            PickupObjectDatabase.GetById(535).quality = PickupObject.ItemQuality.A;
+            PickupObjectDatabase.GetById(747).quality = PickupObject.ItemQuality.S;
+            Log($"GunMania - Cut guns succesfully reimplemented! (El Tigre, Real Cool Bow, Turtine Gun)", ("#dd00ff"));
+
         }
 
         public static void Log(string text, string color = "#FFFFFF")

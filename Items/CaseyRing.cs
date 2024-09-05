@@ -4,67 +4,65 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 using Alexandria.ItemAPI;
+using Alexandria.StatAPI;
 
 namespace GunMania
 {
-    public class FrogRing : PassiveItem
+    public class CaseyRing : PassiveItem
     {
         //Call this method from the Start() method of your ETGModule extension
         public static void Add()
         {
             //The name of the item
-            string itemName = "Frog Ring";
+            string itemName = "Casey Ring";
 
             //Refers to an embedded png in the project. Make sure to embed your resources! Google it
-            string resourceName = "GunMania/Resources/Items/frog_ring";
+            string resourceName = "GunMania/Resources/Items/casey_ring";
 
             //Create new GameObject
             GameObject obj = new GameObject(itemName);
 
             //Add a PassiveItem component to the object
-            var item = obj.AddComponent<FrogRing>();
+            var item = obj.AddComponent<BilliardsStickItem>();
 
             //Adds a sprite component to the object and adds your texture to the item sprite collection
             ItemBuilder.AddSpriteToObject(itemName, resourceName, obj);
 
             //Ammonomicon entry variables
-            string shortDesc = "Ribbit";
-            string longDesc = "An ancient gungeon legend... turns out it is real!\n\n" +
-                "Makes ur dodgeroll faster and more powerful and increases movement speed by 1, like a frog!\n\n\n" +
+            string shortDesc = "My son!";
+            string longDesc = "The gunslinger missed playing billiards while building this place.\n\n" +
+                "Makes enemies killed act like when smacked by casey! \n\n" +
+                "Yes its the same thing as Cue Bullets.\n\n\n" +
                 "-Gunmania-";
 
             //Adds the item to the gungeon item list, the ammonomicon, the loot table, etc.
             //Do this after ItemBuilder.AddSpriteToObject!
             ItemBuilder.SetupItem(item, shortDesc, longDesc, "gunmania");
 
-            //Adds the actual passive effect to the item    
-            ItemBuilder.AddPassiveStatModifier(item, PlayerStats.StatType.DodgeRollSpeedMultiplier, 0.23f, StatModifier.ModifyMethod.ADDITIVE);
-            ItemBuilder.AddPassiveStatModifier(item, PlayerStats.StatType.DodgeRollDistanceMultiplier, 0.23f);
-            ItemBuilder.AddPassiveStatModifier(item, PlayerStats.StatType.MovementSpeed, 1f);
-
             //Set the rarity of the item
-item.quality = PickupObject.ItemQuality.C;
+            item.quality = PickupObject.ItemQuality.B;
+        }
+        public void PostProcessProjectile(Projectile projectile, float effectChanceScalar)
+        {
 
-            List<string> mandatoryConsoleIDs = new List<string>
-{
-"gunmania:frog_ring",
-};
-            List<string> optionalConsoleIDs = new List<string>
-{
-    "gunmania:frog_ring"
-};
-            CustomSynergies.Add("Green Bouncy Fishes!", mandatoryConsoleIDs, optionalConsoleIDs, true);
         }
 
         public override void Pickup(PlayerController player)
         {
             base.Pickup(player);
             Plugin.Log($"Player picked up {DisplayName}");
+
+            player.PostProcessProjectile += PostProcessProjectile;
         }
 
         public override void DisableEffect(PlayerController player)
         {
             Plugin.Log($"Player dropped or got rid of {DisplayName}");
+
+            if (player == null)
+                return;
+
+            player.PostProcessProjectile -= PostProcessProjectile;
         }
     }
 }

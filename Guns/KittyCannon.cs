@@ -23,7 +23,8 @@ namespace GunMania
             gun.gameObject.AddComponent<KittyCannon>();
             //These two lines determines the description of your gun, ".SetShortDescription" being the description that appears when you pick up the gun and ".SetLongDescription" being the description in the Ammonomicon entry. 
             gun.SetShortDescription("Meow");
-            gun.SetLongDescription("Fires slow, but strong piercing cats. Picks from a random pool of 3 different cats to shoot, each one with different stats!");
+            gun.SetLongDescription("Fires slow, but strong piercing cats. Picks from a random pool of 3 different cats to shoot, each one with different stats!\n\n\n" +
+                "-Gunmania-");
             // This is required, unless you want to use the sprites of the base gun.
             // That, by default, is the pea shooter.
             // SetupSprite sets up the default gun sprite for the ammonomicon and the "gun get" popup.
