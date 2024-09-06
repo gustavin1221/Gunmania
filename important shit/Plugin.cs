@@ -40,15 +40,18 @@ namespace GunMania
             Gal.Add();
             FrogRing.Add();
             FlubberRing.Add();
-            CaseyRing.Add();
+            CueBullets.Add();
             EncheesedLead.Add();
             MucousLead.Add();
+            Biter.Add();
 
             Log($"{NAME} v{VERSION} started succesfully", ("#dd00ff"));
 
             PickupObjectDatabase.GetById(368).quality = PickupObject.ItemQuality.B;
+            (PickupObjectDatabase.GetById(368) as Gun).DefaultModule.projectiles[0].baseData.damage = 10;
             PickupObjectDatabase.GetById(535).quality = PickupObject.ItemQuality.A;
-            PickupObjectDatabase.GetById(747).quality = PickupObject.ItemQuality.S;
+            PickupObjectDatabase.GetById(747).quality = PickupObject.ItemQuality.B;
+            (PickupObjectDatabase.GetById(747) as Gun).DefaultModule.projectiles[0].baseData.damage = 8;
             Log($"GunMania - Cut guns succesfully reimplemented! (El Tigre, Real Cool Bow, Turtine Gun)", ("#dd00ff"));
 
         }

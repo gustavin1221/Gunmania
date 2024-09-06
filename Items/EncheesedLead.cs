@@ -39,12 +39,12 @@ namespace GunMania
             ItemBuilder.SetupItem(item, shortDesc, longDesc, "gunmania");
 
             //Set the rarity of the item
-            item.quality = PickupObject.ItemQuality.B;
+            item.quality = PickupObject.ItemQuality.A;
         }
         public void PostProcessProjectile(Projectile projectile, float effectChanceScalar)
         {
             // yourPoisonApplyChance should be between 0f (0%) and 1f (100%)
-            if (UnityEngine.Random.value <= 0.2f)
+            if (UnityEngine.Random.value <= 0.75f)
             projectile.statusEffectsToApply.Add((PickupObjectDatabase.GetById(626) as Gun).DefaultModule.projectiles[0].cheeseEffect);
         }
 

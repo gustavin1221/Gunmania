@@ -8,7 +8,7 @@ using Alexandria.StatAPI;
 
 namespace GunMania
 {
-    public class CaseyRing : PassiveItem
+    public class CueBullets : PassiveItem
     {
         //Call this method from the Start() method of your ETGModule extension
         public static void Add()

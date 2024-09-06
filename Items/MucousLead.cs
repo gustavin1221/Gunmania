@@ -31,7 +31,7 @@ namespace GunMania
             //Ammonomicon entry variables
             string shortDesc = "Ew!";
             string longDesc = "The first gungeoneer to find this ancient bullet modifier fell 15 times while trying to pick it up from its mucous pool.\n\n" +
-                "Shots get a chance to inflict the slow effect.\n\n\n" +
+                "Shots get a high chance to inflict the slow effect.\n\n\n" +
                 "''Slugs - Skilotar''\n\n\n" +
                 "-Gunmania-";
 
@@ -45,7 +45,7 @@ namespace GunMania
         public void PostProcessProjectile(Projectile projectile, float effectChanceScalar)
         {
             // yourPoisonApplyChance should be between 0f (0%) and 1f (100%)
-            if (UnityEngine.Random.value <= 1f)
+            if (UnityEngine.Random.value <= 0.9f)
             projectile.statusEffectsToApply.Add((PickupObjectDatabase.GetById(381) as Gun).DefaultModule.projectiles[0].speedEffect);
         }
 

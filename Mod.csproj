@@ -35,6 +35,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Guns\Biter.cs" />
     <Compile Include="Guns\GreenAlienBeamGun.cs" />
     <Compile Include="Guns\KittyCannon.cs" />
     <Compile Include="Guns\RainbuddySpecial.cs" />
@@ -48,7 +49,7 @@
     <Compile Include="important shit\Tools.cs" />
     <Compile Include="important shit\Plugin.cs" />
     <Compile Include="important shit\VFXHelper.cs" />
-    <Compile Include="Items\CaseyRing.cs" />
+    <Compile Include="Items\CueBullets.cs" />
     <Compile Include="Items\MucousLead.cs" />
     <Compile Include="Items\EncheesedLead.cs" />
     <Compile Include="Items\FlubberBulletsRing.cs" />
