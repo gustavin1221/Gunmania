@@ -8,6 +8,7 @@ using System.Text;
 using UnityEngine;
 using HarmonyLib;
 using HutongGames.PlayMaker.Actions;
+using System.Reflection;
 
 namespace GunMania
 {
@@ -23,7 +24,7 @@ namespace GunMania
 
         public void Start()
         {
-            ETGModMainBehaviour.WaitForGameManagerStart(GMStart);
+            ETGModMainBehaviour.WaitForGameManagerStart(GMStart);   
         }
         public void GMStart(GameManager g)
         {
@@ -44,16 +45,17 @@ namespace GunMania
             EncheesedLead.Add();
             MucousLead.Add();
             Biter.Add();
-
-            Log($"{NAME} v{VERSION} started succesfully", ("#dd00ff"));
+            UnholyUnloader.Add();
+            Shotglob.Add();
+            OGBurst.Add();
+            PumpShotgun.Add();
 
             PickupObjectDatabase.GetById(368).quality = PickupObject.ItemQuality.B;
             (PickupObjectDatabase.GetById(368) as Gun).DefaultModule.projectiles[0].baseData.damage = 10;
-            PickupObjectDatabase.GetById(535).quality = PickupObject.ItemQuality.A;
-            PickupObjectDatabase.GetById(747).quality = PickupObject.ItemQuality.B;
-            (PickupObjectDatabase.GetById(747) as Gun).DefaultModule.projectiles[0].baseData.damage = 8;
-            Log($"GunMania - Cut guns succesfully reimplemented! (El Tigre, Real Cool Bow, Turtine Gun)", ("#dd00ff"));
 
+            Log($"{NAME} v{VERSION} started succesfully", ("#dd00ff"));
+
+            Alexandria.Misc.AudioUtility.AutoloadFromAssembly(Assembly.GetExecutingAssembly(), "GunMania");
         }
 
         public static void Log(string text, string color = "#FFFFFF")
